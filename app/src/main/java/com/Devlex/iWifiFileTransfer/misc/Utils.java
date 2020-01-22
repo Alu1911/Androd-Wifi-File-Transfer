@@ -131,6 +131,11 @@ public class Utils {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
     }
 
+    public static boolean hasOreo() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
+    }
+
+
     public static boolean hasLollipop() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }

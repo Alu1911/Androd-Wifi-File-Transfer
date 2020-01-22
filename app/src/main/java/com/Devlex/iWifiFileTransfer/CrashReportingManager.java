@@ -1,8 +1,8 @@
 package com.Devlex.iWifiFileTransfer;
 
-import com.google.firebase.crash.FirebaseCrash;
 
 import com.Devlex.iWifiFileTransfer.BuildConfig;
+import com.crashlytics.android.Crashlytics;
 
 /**
  * Created by HaKr on 23/05/16.
@@ -18,7 +18,8 @@ public class CrashReportingManager {
         if(BuildConfig.DEBUG){
             e.printStackTrace();
         } else if(log) {
-            FirebaseCrash.report(e);
+            Crashlytics.logException(e);
+
         }
     }
 }

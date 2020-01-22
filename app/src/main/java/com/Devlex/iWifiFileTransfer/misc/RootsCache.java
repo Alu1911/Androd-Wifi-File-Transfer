@@ -72,6 +72,8 @@ public class RootsCache {
     private final RootInfo mHomeRoot = new RootInfo();
     private final RootInfo mConnectionsRoot = new RootInfo();
     private final RootInfo mRecentsRoot = new RootInfo();
+    private final RootInfo mTransferRoot = new RootInfo();
+    private final RootInfo mCastRoot = new RootInfo();
 
     private final Object mLock = new Object();
     private final CountDownLatch mFirstLoad = new CountDownLatch(1);
@@ -129,6 +131,18 @@ public class RootsCache {
         mRecentsRoot.title = mContext.getString(R.string.root_recent);
         mRecentsRoot.availableBytes = -1;
         mRecentsRoot.deriveFields();
+
+
+
+
+        // Special root for cast queue
+        mCastRoot.authority = null;
+        mCastRoot.rootId = "cast";
+        mCastRoot.flags = Root.FLAG_LOCAL_ONLY;
+        mCastRoot.title = "cast root";
+        mCastRoot.availableBytes = -1;
+        mCastRoot.deriveFields();
+
 
         new UpdateTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
@@ -198,8 +212,11 @@ public class RootsCache {
                 waitForFirstLoad();
             }
 
+
+
             mTaskRoots.put(mHomeRoot.authority, mHomeRoot);
             mTaskRoots.put(mConnectionsRoot.authority, mConnectionsRoot);
+            mTaskRoots.put(mCastRoot.authority, mCastRoot);
             mTaskRoots.put(mRecentsRoot.authority, mRecentsRoot);
 
             final ContentResolver resolver = mContext.getContentResolver();

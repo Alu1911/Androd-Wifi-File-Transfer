@@ -190,7 +190,7 @@ public final class Streams {
      * Returns the ASCII characters up to but not including the next "\r\n", or
      * "\n".
      *
-     * @throws java.io.EOFException if the stream is exhausted before the next newline
+     * @throws EOFException if the stream is exhausted before the next newline
      *     character.
      */
     public static String readAsciiLine(InputStream in) throws IOException {

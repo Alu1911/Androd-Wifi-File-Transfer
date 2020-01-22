@@ -12,12 +12,12 @@ import android.os.Build;
 import android.os.storage.StorageManager;
 import android.os.storage.StorageVolume;
 import android.support.design.widget.Snackbar;
-import android.support.v4.provider.BasicDocumentFile;
-import android.support.v4.provider.DocumentFile;
-import android.support.v4.provider.UsbDocumentFile;
-import android.support.v4.util.ArrayMap;
+import android.support.provider.BasicDocumentFile;
+import android.support.provider.DocumentFile;
+import android.support.provider.UsbDocumentFile;
 import android.support.v7.app.AlertDialog;
 import android.text.Spanned;
+import android.util.ArrayMap;
 
 import java.io.File;
 import java.io.FileNotFoundException;

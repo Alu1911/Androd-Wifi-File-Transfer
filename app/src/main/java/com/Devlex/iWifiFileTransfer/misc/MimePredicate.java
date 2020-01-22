@@ -16,8 +16,8 @@
 
 package com.Devlex.iWifiFileTransfer.misc;
 
-import com.android.internal.util.Predicate;
 
+import com.Devlex.iWifiFileTransfer.libcore.util.Predicate;
 import com.Devlex.iWifiFileTransfer.model.DocumentInfo;
 import com.Devlex.iWifiFileTransfer.model.DocumentsContract;
 import com.Devlex.iWifiFileTransfer.model.DocumentsContract.Document;

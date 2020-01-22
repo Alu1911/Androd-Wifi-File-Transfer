@@ -14,23 +14,27 @@
  * limitations under the License.
  */
 
-package android.support.v4.provider;
+package android.support.provider;
 
+import android.annotation.TargetApi;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
+import android.provider.DocumentsContract;
+import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.util.Log;
 
-import java.util.ArrayList;
+import java.io.FileNotFoundException;
 
-import com.Devlex.iWifiFileTransfer.model.DocumentsContract;
 
-class DocumentsContractCompat {
-    private static final String TAG = "DocumentsContractCompat";
+@RequiresApi(19)
+@TargetApi(19)
+class DocumentsContractApi19 {
+    private static final String TAG = "DocumentFile";
 
     // DocumentsContract API level 24.
     private static final int FLAG_VIRTUAL_DOCUMENT = 1 << 9;
@@ -74,7 +78,11 @@ class DocumentsContractCompat {
 
     public static boolean isFile(Context context, Uri self) {
         final String type = getRawType(context, self);
-        return !(DocumentsContract.Document.MIME_TYPE_DIR.equals(type) || TextUtils.isEmpty(type));
+        if (DocumentsContract.Document.MIME_TYPE_DIR.equals(type) || TextUtils.isEmpty(type)) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public static long lastModified(Context context, Uri self) {
@@ -93,8 +101,11 @@ class DocumentsContractCompat {
         }
 
         // Ignore documents without MIME
-        return !TextUtils.isEmpty(getRawType(context, self));
+        if (TextUtils.isEmpty(getRawType(context, self))) {
+            return false;
+        }
 
+        return true;
     }
 
     public static boolean canWrite(Context context, Uri self) {
@@ -131,7 +142,12 @@ class DocumentsContractCompat {
     }
 
     public static boolean delete(Context context, Uri self) {
-        return DocumentsContract.deleteDocument(context.getContentResolver(), self);
+        try {
+            return DocumentsContract.deleteDocument(context.getContentResolver(), self);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public static boolean exists(Context context, Uri self) {
@@ -193,49 +209,6 @@ class DocumentsContractCompat {
         } finally {
             closeQuietly(c);
         }
-    }
-    public static Uri createFile(Context context, Uri self, String mimeType,
-                                 String displayName) {
-        return DocumentsContract.createDocument(context.getContentResolver(), self, mimeType,
-                displayName);
-    }
-
-    public static Uri createDirectory(Context context, Uri self, String displayName) {
-        return createFile(context, self, DocumentsContract.Document.MIME_TYPE_DIR, displayName);
-    }
-
-    public static Uri prepareTreeUri(Uri treeUri) {
-        return DocumentsContract.buildDocumentUriUsingTree(treeUri,
-                DocumentsContract.getTreeDocumentId(treeUri));
-    }
-
-    public static Uri[] listFiles(Context context, Uri self) {
-        final ContentResolver resolver = context.getContentResolver();
-        final Uri childrenUri = DocumentsContract.buildChildDocumentsUri(self.getAuthority(),
-                DocumentsContract.getDocumentId(self));
-        final ArrayList<Uri> results = new ArrayList<Uri>();
-
-        Cursor c = null;
-        try {
-            c = resolver.query(childrenUri, new String[] {
-                    DocumentsContract.Document.COLUMN_DOCUMENT_ID }, null, null, null);
-            while (c.moveToNext()) {
-                final String documentId = c.getString(0);
-                final Uri documentUri = DocumentsContract.buildDocumentUri(self.getAuthority(),
-                        documentId);
-                results.add(documentUri);
-            }
-        } catch (Exception e) {
-            Log.w(TAG, "Failed query: " + e);
-        } finally {
-            closeQuietly(c);
-        }
-
-        return results.toArray(new Uri[results.size()]);
-    }
-
-    public static Uri renameTo(Context context, Uri self, String displayName) {
-        return DocumentsContract.renameDocument(context.getContentResolver(), self, displayName);
     }
 
     private static void closeQuietly(AutoCloseable closeable) {

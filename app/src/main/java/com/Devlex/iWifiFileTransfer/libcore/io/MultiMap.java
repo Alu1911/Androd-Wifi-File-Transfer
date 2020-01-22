@@ -16,7 +16,7 @@
 package com.Devlex.iWifiFileTransfer.libcore.io;
 
 import android.support.annotation.Nullable;
-import android.support.v4.util.ArrayMap;
+import android.util.ArrayMap;
 
 import java.util.Collections;
 import java.util.LinkedList;

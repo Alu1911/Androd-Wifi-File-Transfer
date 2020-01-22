@@ -148,7 +148,7 @@ public final class IoUtils {
      * Calls close(2) on 'fd'. Also resets the internal int to -1. Does nothing if 'fd' is null
      * or invalid.
      */
-    public static void close() throws IOException {
+    public static void close(FileDescriptor fd) throws IOException {
 /*        try {
             if (fd != null && fd.valid()) {
                 Libcore.os.close(fd);
@@ -175,9 +175,9 @@ public final class IoUtils {
     /**
      * Closes 'fd', ignoring any exceptions. Does nothing if 'fd' is null or invalid.
      */
-    public static void closeQuietly() {
+    public static void closeQuietly(FileDescriptor fd) {
         try {
-            IoUtils.close();
+            IoUtils.close(fd);
         } catch (IOException ignored) {
         }
     }
@@ -185,7 +185,7 @@ public final class IoUtils {
     /**
      * Sets 'fd' to be blocking or non-blocking, according to the state of 'blocking'.
      */
-    public static void setBlocking() throws IOException {
+    public static void setBlocking(FileDescriptor fd, boolean blocking) throws IOException {
 /*        try {
             int flags = Libcore.os.fcntlVoid(fd, F_GETFL);
             if (!blocking) {
@@ -236,7 +236,7 @@ public final class IoUtils {
      * require read permission on the parent, so it'll work in more cases, and allow you to
      * remove read permission from more directories.
      */
-    public static boolean canOpenReadOnly() {
+    public static boolean canOpenReadOnly(String path) {
 /*        try {
             // Use open(2) rather than stat(2) so we require fewer permissions. http://b/6485312.
             FileDescriptor fd = Libcore.os.open(path, O_RDONLY, 0);

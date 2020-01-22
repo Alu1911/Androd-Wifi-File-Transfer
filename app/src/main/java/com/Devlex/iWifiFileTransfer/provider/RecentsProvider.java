@@ -29,17 +29,17 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.util.ArraySet;
 import android.text.format.DateUtils;
+import android.util.ArraySet;
 import android.util.Log;
 
-import com.android.internal.util.Predicate;
 
 import java.io.IOException;
 import java.util.List;
 
 import com.Devlex.iWifiFileTransfer.BuildConfig;
 import com.Devlex.iWifiFileTransfer.libcore.io.IoUtils;
+import com.Devlex.iWifiFileTransfer.libcore.util.Predicate;
 import com.Devlex.iWifiFileTransfer.model.DocumentStack;
 import com.Devlex.iWifiFileTransfer.model.DocumentsContract;
 import com.Devlex.iWifiFileTransfer.model.DocumentsContract.Document;
@@ -132,7 +132,7 @@ public class RecentsProvider extends ContentProvider {
         public void onCreate(SQLiteDatabase db) {
 
             db.execSQL("CREATE TABLE " + TABLE_RECENT + " (" +
-                    RecentColumns.KEY + " TEXT PRIMARY KEY ON CONFLICT REPLACE," +
+                    RecentColumns.KEY + "TEXT PRIMARY KEY ON CONFLICT REPLACE," +
                     RecentColumns.STACK + " BLOB DEFAULT NULL," +
                     RecentColumns.TIMESTAMP + " INTEGER" +
                     ")");

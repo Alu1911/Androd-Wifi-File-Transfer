@@ -13,145 +13,88 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<!--suppress ALL -->
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="8dp"
-        app:contentInsetLeft="@dimen/second_keyline_default"
-        app:contentInsetStart="@dimen/second_keyline_default"
-        app:popupTheme="?attr/actionBarPopupTheme"
-        app:theme="?attr/actionBarTheme">
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:elevation="5dp"
+        android:onClick="imageClick"
+        android:scaleType="center"
+        android:src="@drawable/sdgif"
 
-        <Spinner
-            android:id="@+id/stack"
+        android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:elevation="5dp"
+        android:onClick="imageClick"
+        android:scaleType="center"
+        android:src="@drawable/sdgif"
+
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:layout_marginStart="4dp"
-            android:overlapAnchor="true" />
+            android:text="TextView"
+            android:visibility="gone" />
 
-    </android.support.v7.widget.Toolbar>
-
-    <android.support.v4.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifImageView"
+        <TextView
+            android:id="@+id/ipaddr"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/accent_white"
-            android:clickable="true"
-            android:elevation="5dp"
-            android:onClick="imageClick"
-            android:scaleType="fitXY"
-            android:src="@drawable/sdgif"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/waiting"
+            android:textAllCaps="false"
 
-            android:visibility="invisible" />
-        <AbsoluteLayout
+            android:textSize="24sp"
+            android:textStyle="normal"
+            android:visibility="visible" />
+
+        <com.Devlex.iWifiFileTransfer.CircleMenu
+            android:id="@+id/circle_menu"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/hello"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:visibility="gone" />
+            android:layout_height="0dp"
+            android:layout_weight="1.04" />
 
-            <com.Devlex.iWifiFileTransfer.CircleMenu
-                android:id="@+id/circle_menu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_y="310dp" />
-
-            <AbsoluteLayout
-                android:id="@+id/linearLayout1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="54dp"
-                android:gravity=""
-                android:orientation="horizontal"
-                android:visibility="visible"
-                android:weightSum="1.0">
-
-                <TextView
-                    android:id="@+id/ipaddr"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/waiting"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="24sp"
-                    android:textStyle="normal"
-                    android:visibility="visible" />
-            </AbsoluteLayout>
-            <FrameLayout
-                android:id="@+id/container_rate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:elevation="8dp" />
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp">
-
-                <include layout="@layout/directory_layout" />
-            </FrameLayout>
-
-
-            <FrameLayout
-                android:id="@+id/container_save"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/material_grey_50"
-                android:elevation="8dp" />
-
-        </AbsoluteLayout>
-
-        <LinearLayout
-            android:id="@+id/drawer_roots"
-            android:layout_width="@dimen/side_navigation_width"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:elevation="16dp"
-            android:orientation="vertical">
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/roots_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                android:elevation="8dp"
-                android:visibility="gone"
-                app:popupTheme="?attr/actionBarPopupTheme"
-                app:theme="?attr/actionBarTheme" />
-
-            <FrameLayout
-                android:id="@+id/container_roots"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="?android:attr/windowBackground" />
-
-        </LinearLayout>
 
         <FrameLayout
-            android:id="@+id/container_info"
-            android:layout_width="@dimen/detail_width"
-            android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:background="?android:attr/windowBackground" />
+            android:id="@+id/container_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:visibility="gone" />
 
-    </android.support.v4.widget.DrawerLayout>
-</AbsoluteLayout>
+        <FrameLayout
+
+
+                android:id="@+id/content_view"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:elevation="3dp"
+                tools:showIn="@layout/act">
+
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

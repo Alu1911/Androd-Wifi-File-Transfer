@@ -36,8 +36,7 @@ public class Arrays {
      */
     public static void checkOffsetAndCount(int arrayLength, int offset, int count) {
         if ((offset | count) < 0 || offset > arrayLength || arrayLength - offset < count) {
-            throw new ArrayIndexOutOfBoundsException(arrayLength, offset,
-                    count);
+//            throw new java.lang.ArrayIndexOutOfBoundsException(arrayLength, offset, count);
         }
     }
 
@@ -51,7 +50,7 @@ public class Arrays {
      * @param start the start index, inclusive
      * @param end the end index, exclusive
      * @return the new array
-     * @throws ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
+     * @throws java.lang.ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
      * @throws IllegalArgumentException if {@code start > end}
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
@@ -62,7 +61,7 @@ public class Arrays {
         }
         int originalLength = original.length;
         if (start < 0 || start > originalLength) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new java.lang.ArrayIndexOutOfBoundsException();
         }
         int resultLength = end - start;
         int copyLength = Math.min(resultLength, originalLength - start);
@@ -81,7 +80,7 @@ public class Arrays {
      * @param start the start index, inclusive
      * @param end the end index, exclusive
      * @return the new array
-     * @throws ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
+     * @throws java.lang.ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
      * @throws IllegalArgumentException if {@code start > end}
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
@@ -92,7 +91,7 @@ public class Arrays {
         }
         int originalLength = original.length;
         if (start < 0 || start > originalLength) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new java.lang.ArrayIndexOutOfBoundsException();
         }
         int resultLength = end - start;
         int copyLength = Math.min(resultLength, originalLength - start);
@@ -111,7 +110,7 @@ public class Arrays {
      * @param start the start index, inclusive
      * @param end the end index, exclusive
      * @return the new array
-     * @throws ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
+     * @throws java.lang.ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
      * @throws IllegalArgumentException if {@code start > end}
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
@@ -122,7 +121,7 @@ public class Arrays {
         }
         int originalLength = original.length;
         if (start < 0 || start > originalLength) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new java.lang.ArrayIndexOutOfBoundsException();
         }
         int resultLength = end - start;
         int copyLength = Math.min(resultLength, originalLength - start);
@@ -141,7 +140,7 @@ public class Arrays {
      * @param start the start index, inclusive
      * @param end the end index, exclusive
      * @return the new array
-     * @throws ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
+     * @throws java.lang.ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
      * @throws IllegalArgumentException if {@code start > end}
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
@@ -152,7 +151,7 @@ public class Arrays {
         }
         int originalLength = original.length;
         if (start < 0 || start > originalLength) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new java.lang.ArrayIndexOutOfBoundsException();
         }
         int resultLength = end - start;
         int copyLength = Math.min(resultLength, originalLength - start);
@@ -171,7 +170,7 @@ public class Arrays {
      * @param start the start index, inclusive
      * @param end the end index, exclusive
      * @return the new array
-     * @throws ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
+     * @throws java.lang.ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
      * @throws IllegalArgumentException if {@code start > end}
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
@@ -182,7 +181,7 @@ public class Arrays {
         }
         int originalLength = original.length;
         if (start < 0 || start > originalLength) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new java.lang.ArrayIndexOutOfBoundsException();
         }
         int resultLength = end - start;
         int copyLength = Math.min(resultLength, originalLength - start);
@@ -201,7 +200,7 @@ public class Arrays {
      * @param start the start index, inclusive
      * @param end the end index, exclusive
      * @return the new array
-     * @throws ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
+     * @throws java.lang.ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
      * @throws IllegalArgumentException if {@code start > end}
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
@@ -212,7 +211,7 @@ public class Arrays {
         }
         int originalLength = original.length;
         if (start < 0 || start > originalLength) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new java.lang.ArrayIndexOutOfBoundsException();
         }
         int resultLength = end - start;
         int copyLength = Math.min(resultLength, originalLength - start);
@@ -231,7 +230,7 @@ public class Arrays {
      * @param start the start index, inclusive
      * @param end the end index, exclusive
      * @return the new array
-     * @throws ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
+     * @throws java.lang.ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
      * @throws IllegalArgumentException if {@code start > end}
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
@@ -242,7 +241,7 @@ public class Arrays {
         }
         int originalLength = original.length;
         if (start < 0 || start > originalLength) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new java.lang.ArrayIndexOutOfBoundsException();
         }
         int resultLength = end - start;
         int copyLength = Math.min(resultLength, originalLength - start);
@@ -261,7 +260,7 @@ public class Arrays {
      * @param start the start index, inclusive
      * @param end the end index, exclusive
      * @return the new array
-     * @throws ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
+     * @throws java.lang.ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
      * @throws IllegalArgumentException if {@code start > end}
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
@@ -272,7 +271,7 @@ public class Arrays {
         }
         int originalLength = original.length;
         if (start < 0 || start > originalLength) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new java.lang.ArrayIndexOutOfBoundsException();
         }
         int resultLength = end - start;
         int copyLength = Math.min(resultLength, originalLength - start);
@@ -291,7 +290,7 @@ public class Arrays {
      * @param start the start index, inclusive
      * @param end the end index, exclusive
      * @return the new array
-     * @throws ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
+     * @throws java.lang.ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
      * @throws IllegalArgumentException if {@code start > end}
      * @throws NullPointerException if {@code original == null}
      * @since 1.6
@@ -303,7 +302,7 @@ public class Arrays {
             throw new IllegalArgumentException();
         }
         if (start < 0 || start > originalLength) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new java.lang.ArrayIndexOutOfBoundsException();
         }
         int resultLength = end - start;
         int copyLength = Math.min(resultLength, originalLength - start);
@@ -322,7 +321,7 @@ public class Arrays {
      * @param start the start index, inclusive
      * @param end the end index, exclusive
      * @return the new array
-     * @throws ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
+     * @throws java.lang.ArrayIndexOutOfBoundsException if {@code start < 0 || start > original.length}
      * @throws IllegalArgumentException if {@code start > end}
      * @throws NullPointerException if {@code original == null}
      * @throws ArrayStoreException if a value in {@code original} is incompatible with T
@@ -335,7 +334,7 @@ public class Arrays {
         }
         int originalLength = original.length;
         if (start < 0 || start > originalLength) {
-            throw new ArrayIndexOutOfBoundsException();
+            throw new java.lang.ArrayIndexOutOfBoundsException();
         }
         int resultLength = end - start;
         int copyLength = Math.min(resultLength, originalLength - start);

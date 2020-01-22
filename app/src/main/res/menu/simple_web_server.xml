@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.Devlex.iWifiFileTransfer.WF" >
+
+    <item android:id="@+id/set_saved_folder" android:title="Saving Folder" />
+    <item android:id="@+id/action_settings" android:visible="false" android:title="@string/action_settings" android:showAsAction="never" />
+    <item android:id="@+id/About_ID" android:visible="false" android:title="About" />
+    <item android:id="@+id/Exit_ID" android:title="Exit" />
+    
+    
+
+</menu>

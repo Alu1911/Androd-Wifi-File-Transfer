@@ -1,0 +1,152 @@
+{
+  "project_info": {
+    "project_number": "1046700858081",
+    "firebase_url": "https://Wifi File Transfer-master-1d88e.firebaseio.com",
+    "project_id": "Wifi File Transfer-master-1d88e",
+    "storage_bucket": "Wifi File Transfer-master-1d88e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046700858081:android:3fc4eaba9a46eb89",
+        "android_client_info": {
+          "package_name": "com.Devlex.iWifiFileTransfer.pro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1046700858081-3nl5k81efu58850dmrdsrqetor8to30c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Devlex.iWifiFileTransfer.pro",
+            "certificate_hash": "4b989030148c209abc84efda7ab67e3980e0e37b"
+          }
+        },
+        {
+          "client_id": "1046700858081-4o6a5vin998160h9ube79lggf1s3qfaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC064xW5Pv09VkccbnqsSyyx8T52sZDNxs"
+        },
+        {
+          "current_key": "AIzaSyBcBD557WyiqQPRpUoqPBr119gBZxr0i-w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1046700858081-4o6a5vin998160h9ube79lggf1s3qfaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046700858081:android:c8ec2ec0f24a77bd",
+        "android_client_info": {
+          "package_name": "com.Devlex.iWifiFileTransfer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1046700858081-ad63jfaed2v2cefejpaenotigcepjnoi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Devlex.iWifiFileTransfer",
+            "certificate_hash": "4b989030148c209abc84efda7ab67e3980e0e37b"
+          }
+        },
+        {
+          "client_id": "1046700858081-4o6a5vin998160h9ube79lggf1s3qfaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC064xW5Pv09VkccbnqsSyyx8T52sZDNxs"
+        },
+        {
+          "current_key": "AIzaSyBcBD557WyiqQPRpUoqPBr119gBZxr0i-w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1046700858081-4o6a5vin998160h9ube79lggf1s3qfaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046700858081:android:281dd27ea5a34439",
+        "android_client_info": {
+          "package_name": "com.Devlex.iWifiFileTransfer.underground"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1046700858081-btl719n8o3063q5858ctgca0bkppjsj6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Devlex.iWifiFileTransfer.underground",
+            "certificate_hash": "4b989030148c209abc84efda7ab67e3980e0e37b"
+          }
+        },
+        {
+          "client_id": "1046700858081-4o6a5vin998160h9ube79lggf1s3qfaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC064xW5Pv09VkccbnqsSyyx8T52sZDNxs"
+        },
+        {
+          "current_key": "AIzaSyBcBD557WyiqQPRpUoqPBr119gBZxr0i-w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1046700858081-4o6a5vin998160h9ube79lggf1s3qfaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
